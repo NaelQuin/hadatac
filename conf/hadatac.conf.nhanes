@@ -10,21 +10,20 @@ hadatac
     console
     {
         # the application's base host URL
-		host="http://128.113.12.173:9000"
+		host="http://localhost:9000"
 
 		# the url that the application is deployed
-		host_deploy="http://128.113.12.173:9000"
+		host_deploy="http://localhost:9000"
 
 		# the base url that the application uses to send email
-		base_url="128.113.12.173:9000"
+		base_url="127.0.0.1:9000"
 
 		# the kb's base host URL -- usually, the application's base host URL without any port information
-		kb="http://128.113.12.173"
+		kb="http://localhost"
 	}
 
     # Configure the search settings of the SDD editor
     search {
-
          sdd_gen_address="http://128.113.106.57:5000"
          bioportal_api_key="3b6101b1-fc1a-45c2-a8a6-136a04f228c5"
     }
@@ -42,42 +41,47 @@ hadatac
         home="/opt/solr/server/solr"
 
        # URL for data collections
-       data="http://solr:8983/solr"
+       #data="http://solr:8983/solr"
+       data="http://127.0.0.1:8983/solr"
 
         # URL for metadata (RDF triplestore RDF) collection
         # For blazegraph in the local
-        triplestore="http://blazegraph:8080/blazegraph/namespace"
+        #triplestore="http://blazegraph:8080/blazegraph/namespace"
+        triplestore="http://127.0.0.1:8080/blazegraph/namespace"
         # For blazegraph in the vm
         # triplestore="http://127.0.0.1:8080/bigdata/namespace"
 
         # URL for user management collection
-        users="http://solr:8983/solr"
+        #users="http://solr:8983/solr"
+        users="http://127.0.0.1:8983/solr"
 
         # URL for user permission management collection
         # For blazegraph in the local
-        permissions="http://blazegraph:8080/blazegraph/namespace"
+        #permissions="http://blazegraph:8080/blazegraph/namespace"
+        permissions="http://127.0.0.1:8080/blazegraph/namespace"
         # For blazegraph in the vm
         # permissions="http://127.0.0.1:8080/bigdata/namespace"
     }
 
     # activity flags are used to verify if HADatAc knowledge base contains
-        # concepts essential for supported scientific activities
-        activities {
+    # concepts essential for supported scientific activities
+    activities {
 
-            # use true for empirical activities involving the use of sensors
-            empirical=true
+        # use true for empirical activities involving the use of sensors
+        empirical=true
 
-            # use true for computational activities involving computational simulations
-            computational=false
-        }
+        # use true for computational activities involving computational simulations
+        computational=false
+    }
 
-        # properties about community using current HADatAc installation
-        #  - these properties are used to project customization of HADaAc installations
+    # properties about community using current HADatAc installation
+    #  - these properties are used to project customization of HADaAc installations
     community {
        fullname="National Health and Nutrition Examination Survey"
 
        pagetitle="NHANES Data Repository"
-       shortname=""
+
+       shortname="NHANES"
 
        description="<p>The National Health and Nutrition Examination Survey (NHANES) is a program of studies designed to assess the health and nutritional status of adults and children in the United States. The survey is unique in that it combines interviews and physical examinations. NHANES is a major program of the National Center for Health Statistics (NCHS). NCHS is part of the Centers for Disease Control and Prevention (CDC) and has the responsibility for producing vital and health statistics for the Nation.</p><p>The NHANES program began in the early 1960s and has been conducted as a series of surveys focusing on different population groups or health topics. In 1999, the survey became a continuous program that has a changing focus on a variety of health and nutrition measurements to meet emerging needs. The survey examines a nationally representative sample of about 5,000 persons each year. These persons are located in counties across the country, 15 of which are visited each year.</p><p>The NHANES interview includes demographic, socioeconomic, dietary, and health-related questions. The examination component consists of medical, dental, and physiological measurements, as well as laboratory tests administered by highly trained medical personnel.</p><p>Findings from this survey will be used to determine the prevalence of major diseases and risk factors for diseases. Information will be used to assess nutritional status and its association with health promotion and disease prevention. NHANES findings are also the basis for national standards for such measurements as height, weight, and blood pressure. Data from this survey will be used in epidemiological studies and health sciences research, which help develop sound public health policy, direct and design health programs and services, and expand the health knowledge for the Nation.</p><p>To begin searching/browsing NHANES data and obtain data harmonized to a common vocabulary, please use the <b>Search Data & Request Dataset</b> button or the <b>Data Values</b> button.</p><p>To retrieve previously downloaded datasets and codebooks, please use the <b>retrieve datasets/codebooks</b> button.</p><p>A link to tutorials on browsing, downloading and accessing data from the repository can be found below under Documentation by using the <b>User Guide</b> button.</p><p>To report any problems, please email oliveh@rpi.edu.</p>"
 
